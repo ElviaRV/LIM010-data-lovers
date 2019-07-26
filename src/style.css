@@ -21,14 +21,19 @@ body {
   width: 100vw;
   height: 100vh;
   background-size: cover;
-  background-position: center
-
+  background-position: center;
 }
 
 main {
   flex: 1;
 }
-
+.selected{
+  display: flex;
+  flex-direction: column;
+  border: solid 0.5px rgb(238, 238, 238);
+  border-radius: 4px;
+  font-size: 14 px;
+}
 .olvidaste {
 
    width: 100%;
