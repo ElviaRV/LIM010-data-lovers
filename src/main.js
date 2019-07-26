@@ -60,7 +60,6 @@ selectElementPais.addEventListener('change', (event) => {
     let template = `
       <th>Año</th>
       <th>Porcentaje</th> `;
-    console.log(datajunta);
 
     for (let j = 0; j < datajunta.length; j++) {
       template += `
