@@ -8,14 +8,13 @@
 </head>
 
 <body>
-  <header class="flex">
-    <h3>INDICADORES DE DESARROLLO DE LATINOAMÉRICA -PERÚ-BRASIL-MÉXICO-CHILE-</h3>
+  <header>
+    <img src="banco mundial-01.png" class="bm" alt="banco-mundial">
   </header>
-  <main >
-    <!-- <section class="primerapantalla flex section" id="primerapantalla"> -->
-      <section class="login flex" id="login">
-        <form  class="formlog flex">
-          <img src="banco mundial-01.png" class="bm" alt="banco-mundial">
+  <main>
+    <section class="primerapantalla flex section" id="primerapantalla">
+      <div class="login flex" id="login">
+        <form>
           <h1 class="correo cyc">Correo Electrónico</h1>
           <input type="text" class="inputcorreo input flex" id="inputcorreo">
           <h1 class="contrasena cyc">Contraseña</h1>
@@ -25,8 +24,8 @@
           <h2 class="registrate">¿No tienes una cuenta? Registrate</h2>
           <h2 id="error" class="error"></h2>
         </form>
-      </section>
-    <!-- </section> -->
+      </div>
+    </section>
 
     <section class="segundapantalla" id="segundapantalla">
         <div class="flags" id="flags">
@@ -39,25 +38,24 @@
         <button type="submit" id="peru"> <img src="https://upload.wikimedia.org/wikipedia/commons/c/cf/Flag_of_Peru.svg"
             alt="peru" class="banderas"></button>
       </div>
-      <div class="selected flex"
       <select  id="select-element-pais"></select>
       <select  id="select-element-indicador"></select>
-      </div>
         <div class="select-element-pais-indicator" id="select-element-pais-indicator"></div>
         <table id="tabladedatos" class="tabladedatos">
         </table>
       <select  id="select-order-years">
         <option value="0" >Ascendente</option> 
         <option value="1">Descendente</option> 
+        
       </select>
         <input type="number" min="1960" max="2017" id="inputdesde">
         <input type="number" min="1960" max="2017" id="inputhasta">
-        <button type="submit" id="rango"></button>
-        <button type="submit" id="promedio"></button>
+        <button type="submit" id="rango">ELEGIR RANGO DE AÑOS</button>
+        <button type="submit" id="promedio">CALCULAR PROMEDIO</button>
         <div id ="contenedor-promedio"></div>
     </section>
   </main>
-  <footer class="flex">PROYECTO DATA WORLDBANK POR YANINA CONTRERAS Y ELVIA RODRIGUEZ -2019</footer>
+  <footer></footer>
   <script src="./data/worldbank/worldbank.js"></script>
   <script src="data.js"></script>
   <script src="main.js"></script>
