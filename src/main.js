@@ -1,3 +1,4 @@
+
 const inputcorreo = document.getElementById('inputcorreo');
 const inputcontraseña = document.getElementById('inputcontrasena');
 const ingresa = document.getElementById('ingresa');
@@ -23,12 +24,13 @@ ingresa.addEventListener('click', () => {
     error.innerHTML = 'contraseña incorrecta';
   }
 });
-
 // Voy a utilizar las propiedad del objeto worldbank para utilizarlo como array de paises
-
-const arrPaises = worldbank.formarArrayDePaises(WORLDBANK);
+const url = 'https://raw.githubusercontent.com/ElviaRV/LIM010-data-lovers/master/src/data/worldbank/worldbank.json'
+async function getData(){
+  const response = await fetch(url);
+  const data = await response.json();
+  const arrPaises = worldbank.formarArrayDePaises(data);
 console.log(arrPaises);
-
 const pintaOpcionesEnElementoSelect = (arr, elemento, msg) => {
   let string = `<option>Seleccionar un ${msg}</option>`;
   for (let i = 0; i < arr.length; i++) {
@@ -49,7 +51,7 @@ let arrayIndicadores = [];
 
 selectElementPais.addEventListener('change', (event) => {
   const paisSeleccionado = event.target.value;
-  const arrIndicadores = worldbank.obtenerIndicadoresPorPais(WORLDBANK, paisSeleccionado);
+  const arrIndicadores = worldbank.obtenerIndicadoresPorPais(data, paisSeleccionado);
   console.log(arrIndicadores);
   // Pintamos los indicadores de manera dinámica
   pintaOpcionesEnElementoSelect(arrIndicadores, selectElementIndicador, 'indicador');
@@ -75,8 +77,8 @@ selectElementPais.addEventListener('change', (event) => {
 
   selectElementIndicador.addEventListener('change', (event) => {
     const indicadorSeleccionado = event.target.value;
-    const objectData = worldbank.obtenerObjetoData(WORLDBANK, paisSeleccionado, indicadorSeleccionado);
-    console.log(worldbank.obtenerObjetoData(WORLDBANK, paisSeleccionado, indicadorSeleccionado));
+    const objectData = worldbank.obtenerObjetoData(data, paisSeleccionado, indicadorSeleccionado);
+    console.log(worldbank.obtenerObjetoData(data, paisSeleccionado, indicadorSeleccionado));
     const arraydeObjetos = worldbank.obtenerdata(objectData);
     console.log(arraydeObjetos);
     creandoTabla(arraydeObjetos);
@@ -102,4 +104,5 @@ selectElementPais.addEventListener('change', (event) => {
     });
   });
 });
-
+};
+getData();
