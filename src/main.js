@@ -45,7 +45,6 @@ const pintaOpcionesEnElementoSelect = (arr, elemento, msg) => {
 
 // Pintamos los paises de manera dinámica
 pintaOpcionesEnElementoSelect(arrPaises, selectElementPais, 'pais');
-let arrayIndicadores = [];
 
 // Evento para seleccionar un pais desde la pantalla
 
